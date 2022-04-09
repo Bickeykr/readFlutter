@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.read_flutter">
    <application
-        android:label="read_flutter"
+        android:label="readFlutter"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

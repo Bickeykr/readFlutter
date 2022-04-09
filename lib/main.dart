@@ -2,13 +2,17 @@ import 'package:flutter/material.dart';
 
 import 'startingPage.dart';
 
-class Myapp extends StatelessWidget {
-  const Myapp({Key? key}) : super(key: key);
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Material(
-      child: startingPage(),
+    return MaterialApp(
+      home: startingPage(),
     );
   }
 }
