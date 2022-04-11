@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-
-import 'startingPage.dart';
+import 'package:read_flutter/Pages/StartingPage.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:read_flutter/utiles/routes.dart';
+import 'Pages/HomePage.dart';
 
 void main() {
   runApp(MyApp());
@@ -12,7 +14,19 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: startingPage(),
+      themeMode: ThemeMode.light,
+      theme: ThemeData(
+        primarySwatch: Colors.red,
+        //It adjust the color of button and other ements as per the given color
+        fontFamily: GoogleFonts.jost().fontFamily,
+      ),
+      darkTheme: ThemeData(
+        brightness: Brightness.dark,
+      ),
+      routes: {
+        "/": (context) => StartingPage(),
+        MyRoutes.HomeRoute: (context) => HomePage(),
+      },
     );
   }
 }
