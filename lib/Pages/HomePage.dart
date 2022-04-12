@@ -1,6 +1,8 @@
 // We could write this code in main.dart but that will become lenthery so we create a separate file for a seperate file.
 
 import 'package:flutter/material.dart';
+//===========Pages
+import 'package:read_flutter/utiles/routes.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -29,7 +31,9 @@ class _HomePageState extends State<HomePage> {
             height: 50,
           ),
           InkWell(
-            onTap: (() {}),
+            onTap: (() {
+              Navigator.pushNamed(context, MyRoutes.topicPage01);
+            }),
             child: Ink(
               width: 304,
               height: 74,
