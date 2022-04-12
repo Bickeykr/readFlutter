@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:read_flutter/utiles/routes.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class topicPage01 extends StatelessWidget {
+class topicPage02 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -20,7 +20,7 @@ class topicPage01 extends StatelessWidget {
                   height: 30,
                 ),
                 Text(
-                  "Introduction 1.1",
+                  "Introduction 1.2",
                   style: TextStyle(
                     color: Color(0xff78CCDE),
                     fontWeight: FontWeight.bold,
@@ -34,7 +34,7 @@ class topicPage01 extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.fromLTRB(39, 0, 39, 0),
                   child: Text(
-                    "Flutter is a UI toolkit for creating fast, beautiful, natively compiled applications for mobile, web, and desktop with one programing language and single codebase. It is free and open-source. It was initially developed from Google and now manages by an ECMA standard. Flutter apps use Dart programming language for creating an app. The dart programming shares several same features as other programming languages, such as Kotlin and Swift, and can be trans-compiled into JavaScript code.\n\nWe can also use it to build full-featured apps, including camera, storage, geolocation, network, third-party SDKs, and more.",
+                    "The first version of Flutter was announced in the year 2015 at the Dart Developer Summit. Called codename Sky and can run on the Android OS. After the announcement of Flutter, the first Flutter Alpha version (v-0.06) was released in May 2017.\n\nLater, Google launched the second preview of Flutter in September 2018 that was the last big release before Flutter 1.0 version. On December 4, 2018, the first stable version of the Flutter framework was released at the Flutter Live event, denoting Flutter 1.0. The current stable release of the framework is Flutter v1.9.1+hotfix.6 on October 24, 2019.",
                     style: TextStyle(
                       fontFamily: GoogleFonts.jost().fontFamily,
                       color: Color.fromARGB(255, 0, 0, 0),
@@ -50,7 +50,7 @@ class topicPage01 extends StatelessWidget {
                   padding: const EdgeInsets.fromLTRB(211, 0, 0, 0),
                   child: InkWell(
                     onTap: (() {
-                      Navigator.pushNamed(context, MyRoutes.topicPage02);
+                      Navigator.pushNamed(context, MyRoutes.topicPage03);
                     }),
                     child: Ink(
                       width: 108,

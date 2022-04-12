@@ -5,8 +5,12 @@ import 'package:google_fonts/google_fonts.dart';
 //===========Pages
 import 'package:read_flutter/utiles/routes.dart';
 import 'Pages/HomePage.dart';
-import 'TopicPages/topicPage01.dart';
 import 'package:read_flutter/Pages/StartingPage.dart';
+//==========TopicPages
+import 'TopicPages/topicPage01.dart';
+import 'package:read_flutter/TopicPages/topicPage02.dart';
+import 'package:read_flutter/TopicPages/topicPage03.dart';
+
 
 void main() {
   runApp(MyApp());
@@ -30,9 +34,11 @@ class MyApp extends StatelessWidget {
       ),
       //==========================routes==================//
       routes: {
-        "/": (context) => topicPage01(),
+        "/": (context) => StartingPage(),
         MyRoutes.HomeRoute: (context) => HomePage(),
         MyRoutes.topicPage01: (context) => topicPage01(),
+        MyRoutes.topicPage02: (context) => topicPage02(),
+        MyRoutes.topicPage03: (context) => topicPage03(),
       },
     );
   }
