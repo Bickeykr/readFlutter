@@ -4,6 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:read_flutter/utiles/routes.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+//============packages
+import 'package:rflutter_alert/rflutter_alert.dart';
+
 class topicPage03 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -34,7 +37,8 @@ class topicPage03 extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.fromLTRB(39, 0, 39, 0),
                   child: Text(
-                    "The first version of Flutter was announced in the year 2015 at the Dart Developer Summit. Called codename Sky and can run on the Android OS. After the announcement of Flutter, the first Flutter Alpha version (v-0.06) was released in May 2017.\n\nLater, Google launched the second preview of Flutter in September 2018 that was the last big release before Flutter 1.0 version. On December 4, 2018, the first stable version of the Flutter framework was released at the Flutter Live event, denoting Flutter 1.0. The current stable release of the framework is Flutter v1.9.1+hotfix.6 on October 24, 2019.",
+                    "What makes flutter unique?\n\n"
+                    "Flutter is different from other frameworks because it neither uses WebView nor the OEM widgets that shipped with the device. Instead, it uses its own high-performance rendering engine to draw widgets. It also implements most of its systems such as animation, gesture, and widgets in Dart programing language that allows developers to read, change, replace, or remove things easily. It gives excellent control to the developers over the system.",
                     style: TextStyle(
                       fontFamily: GoogleFonts.jost().fontFamily,
                       color: Color.fromARGB(255, 0, 0, 0),
@@ -44,12 +48,24 @@ class topicPage03 extends StatelessWidget {
                   ),
                 ),
                 SizedBox(
-                  height: 30,
+                  height: 140,
                 ),
                 Padding(
                   padding: const EdgeInsets.fromLTRB(211, 0, 0, 0),
                   child: InkWell(
-                    onTap: (() {}),
+                    onTap: (() {
+                      Alert(
+                          style: AlertStyle(isOverlayTapDismiss: false),
+                          context: context,
+                          title: ('Topic completed'),
+                          desc:
+                              'Start Quiz to check your comprehension of the topic',
+                          buttons: [
+                            DialogButton(
+                                child: Text('Start Quiz'),
+                                onPressed: () => Navigator.pop(context))
+                          ]).show();
+                    }),
                     child: Ink(
                       width: 108,
                       height: 50,
