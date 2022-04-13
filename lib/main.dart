@@ -76,7 +76,7 @@ class MyApp extends StatelessWidget {
       ),
       //==========================routes==================//
       routes: {
-        "/": (context) => topicQuiz(),
+        "/": (context) => HomePage(),
         MyRoutes.HomeRoute: (context) => HomePage(),
         MyRoutes.topicPage01: (context) => topicPage01(),
         MyRoutes.topicPage02: (context) => topicPage02(),
