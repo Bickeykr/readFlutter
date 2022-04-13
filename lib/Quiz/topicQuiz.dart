@@ -1,20 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
 
- 
-
-class quizApp extends StatelessWidget {
+class topicQuiz extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
         backgroundColor: Colors.grey.shade900,
-        appBar: AppBar(
-          backgroundColor: Color.fromARGB(255, 0, 0, 0),
-          title: Text('MyQuiz'),
-          centerTitle: true,
-          leading: Icon(Icons.quiz),
-        ),
         body: SafeArea(
           child: Padding(
             padding: EdgeInsets.symmetric(horizontal: 10),
@@ -87,17 +79,6 @@ class _QuizpageState extends State<Quizpage> {
                   onPressed: () {
                     setState(() {
                       if (questionNumber < questions.length - 1) {
-                        if (answers[questionNumber] == true) {
-                          scores.add(Icon(
-                            Icons.check_circle,
-                            color: Colors.green,
-                          ));
-                        } else {
-                          scores.add(Icon(
-                            Icons.cancel,
-                            color: Colors.red,
-                          ));
-                        }
                         questionNumber++;
                       } else {
                         Alert(
@@ -131,28 +112,16 @@ class _QuizpageState extends State<Quizpage> {
                   onPressed: () {
                     setState(() {
                       if (questionNumber < questions.length - 1) {
-                        if (answers[questionNumber] == false) {
-                          scores.add(Icon(
-                            Icons.check_circle,
-                            color: Colors.green,
-                          ));
-                        } else {
-                          scores.add(Icon(
-                            Icons.cancel,
-                            color: Colors.red,
-                          ));
-                        }
                         questionNumber++;
                       } else {
                         Alert(
-                          style: AlertStyle(isOverlayTapDismiss: false),
+                            style: AlertStyle(isOverlayTapDismiss: false),
                             context: context,
                             title: 'Quiz Completed',
                             desc: 'You have finished your quiz',
                             buttons: [
                               DialogButton(
-                                  child: Text('Restart'),
-                                  onPressed: () => Navigator.pop(context))
+                                  child: Text('Restart'), onPressed: () {})
                             ]).show();
                         questionNumber = 0;
                         scores = [];
@@ -169,9 +138,6 @@ class _QuizpageState extends State<Quizpage> {
           ),
           SizedBox(
             height: 20,
-          ),
-          Row(
-            children: scores,
           ),
           SizedBox(
             height: 20,

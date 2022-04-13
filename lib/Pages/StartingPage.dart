@@ -40,7 +40,7 @@ class _StartingPageState extends State<StartingPage> {
                 children: [
                   TextFormField(
                     decoration: InputDecoration(
-                      hintText: "Enter you name",
+                      hintText: "Enter your name",
                       labelText: "Username",
                     ),
                     validator: (value) {

@@ -18,7 +18,7 @@ var alertStyle = AlertStyle(
   descTextAlign: TextAlign.center,
   animationDuration: Duration(milliseconds: 400),
   alertBorder: RoundedRectangleBorder(
-    borderRadius: BorderRadius.circular(12),
+    borderRadius: BorderRadius.circular(20),
     side: BorderSide(
       color: Color.fromARGB(255, 0, 0, 0),
     ),
@@ -82,13 +82,22 @@ class topicPage03 extends StatelessWidget {
                           context: context,
                           title: ('Topic completed'),
                           desc:
-                              'Start Quiz to check your comprehension of the topic',
+                              'Start Quiz to check your comprehension of the topic.',
                           buttons: [
                             DialogButton(
-                                child: Text('Start Quiz'),
+                                height: 60,
+                                width: 200,
+                                child: Text(
+                                  'Start Quiz',
+                                  style: TextStyle(fontSize: 34),
+                                ),
+                                radius: BorderRadius.circular(17),
                                 border: Border.all(
                                     color: Color.fromARGB(255, 10, 10, 10)),
-                                onPressed: () => Navigator.pop(context))
+                                onPressed: () {
+                                  Navigator.pushNamed(
+                                      context, MyRoutes.topicQuiz);
+                                })
                           ]).show();
                     }),
                     child: Ink(
