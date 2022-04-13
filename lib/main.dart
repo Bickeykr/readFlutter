@@ -11,7 +11,6 @@ import 'TopicPages/topicPage01.dart';
 import 'package:read_flutter/TopicPages/topicPage02.dart';
 import 'package:read_flutter/TopicPages/topicPage03.dart';
 
-
 void main() {
   runApp(MyApp());
 }
@@ -34,7 +33,7 @@ class MyApp extends StatelessWidget {
       ),
       //==========================routes==================//
       routes: {
-        "/": (context) => StartingPage(),
+        "/": (context) => topicPage03(),
         MyRoutes.HomeRoute: (context) => HomePage(),
         MyRoutes.topicPage01: (context) => topicPage01(),
         MyRoutes.topicPage02: (context) => topicPage02(),

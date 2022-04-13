@@ -7,6 +7,29 @@ import 'package:google_fonts/google_fonts.dart';
 //============packages
 import 'package:rflutter_alert/rflutter_alert.dart';
 
+var alertStyle = AlertStyle(
+  animationType: AnimationType.fromTop,
+  isCloseButton: false,
+  isOverlayTapDismiss: false,
+  descStyle: TextStyle(
+    fontFamily: GoogleFonts.jost().fontFamily,
+    fontSize: 28,
+  ),
+  descTextAlign: TextAlign.center,
+  animationDuration: Duration(milliseconds: 400),
+  alertBorder: RoundedRectangleBorder(
+    borderRadius: BorderRadius.circular(12),
+    side: BorderSide(
+      color: Color.fromARGB(255, 0, 0, 0),
+    ),
+  ),
+  titleStyle: TextStyle(
+    color: Color.fromARGB(255, 247, 38, 23),
+    fontSize: 32,
+  ),
+  alertAlignment: Alignment.center,
+);
+
 class topicPage03 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -55,7 +78,7 @@ class topicPage03 extends StatelessWidget {
                   child: InkWell(
                     onTap: (() {
                       Alert(
-                          style: AlertStyle(isOverlayTapDismiss: false),
+                          style: alertStyle,
                           context: context,
                           title: ('Topic completed'),
                           desc:
@@ -63,6 +86,8 @@ class topicPage03 extends StatelessWidget {
                           buttons: [
                             DialogButton(
                                 child: Text('Start Quiz'),
+                                border: Border.all(
+                                    color: Color.fromARGB(255, 10, 10, 10)),
                                 onPressed: () => Navigator.pop(context))
                           ]).show();
                     }),
