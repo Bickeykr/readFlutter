@@ -40,6 +40,7 @@ class _topicQuizState extends State<topicQuiz> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         backgroundColor: Color(0xff246EE9),
         body: SafeArea(

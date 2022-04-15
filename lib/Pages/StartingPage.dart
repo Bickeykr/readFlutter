@@ -19,7 +19,9 @@ class _StartingPageState extends State<StartingPage> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp(  
+       debugShowCheckedModeBanner: false,
+
       themeMode: ThemeMode.light,
       theme: ThemeData(
         //It adjust the color of button and other ements as per the given color
@@ -35,7 +37,7 @@ class _StartingPageState extends State<StartingPage> {
             child: Column(
               children: [
                 SizedBox(
-                  height: 300,
+                  height: 315,
                 ),
                 Text(
                   "Welcome to readFlutter",
