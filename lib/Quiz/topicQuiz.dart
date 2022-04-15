@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:read_flutter/Pages/HomePage.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
 import 'package:google_fonts/google_fonts.dart';
 //=============Pages
+import 'package:read_flutter/main.dart';
 import 'package:read_flutter/utiles/routes.dart';
 
 var name = "Bickey ";
@@ -29,7 +31,12 @@ var alertStyle = AlertStyle(
   alertAlignment: Alignment.center,
 );
 
-class topicQuiz extends StatelessWidget {
+class topicQuiz extends StatefulWidget {
+  @override
+  State<topicQuiz> createState() => _topicQuizState();
+}
+
+class _topicQuizState extends State<topicQuiz> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -121,18 +128,17 @@ class _QuizpageState extends State<Quizpage> {
                       'You have successfuly completeed the quiz. you scored 6/10.',
                   buttons: [
                     DialogButton(
-                        height: 60,
-                        width: 200,
-                        child: Text(
-                          'Home',
-                          style: TextStyle(fontSize: 34),
-                        ),
-                        radius: BorderRadius.circular(17),
-                        border:
-                            Border.all(color: Color.fromARGB(255, 10, 10, 10)),
-                        onPressed: () {
-                          Navigator.pushNamed(context, MyRoutes.HomeRoute);
-                        })
+                      height: 60,
+                      width: 200,
+                      child: Text(
+                        'Home',
+                        style: TextStyle(fontSize: 34),
+                      ),
+                      radius: BorderRadius.circular(17),
+                      border:
+                          Border.all(color: Color.fromARGB(255, 10, 10, 10)),
+                      onPressed: () => HomePage(),
+                    )
                   ]).show();
               questionNumber = 0;
             }

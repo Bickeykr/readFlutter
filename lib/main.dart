@@ -7,6 +7,7 @@ import 'package:google_fonts/google_fonts.dart';
 //===========Pages
 import 'package:read_flutter/utiles/routes.dart';
 import 'Pages/HomePage.dart';
+
 import 'package:read_flutter/Pages/StartingPage.dart';
 //==========TopicPages
 import 'TopicPages/topicPage01.dart';
@@ -76,7 +77,7 @@ class MyApp extends StatelessWidget {
       ),
       //==========================routes==================//
       routes: {
-        "/": (context) => HomePage(),
+        "/": (context) => StartingPage(),
         MyRoutes.HomeRoute: (context) => HomePage(),
         MyRoutes.topicPage01: (context) => topicPage01(),
         MyRoutes.topicPage02: (context) => topicPage02(),
