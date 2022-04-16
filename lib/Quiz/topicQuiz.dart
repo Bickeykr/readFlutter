@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:read_flutter/Pages/HomePage.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:page_transition/page_transition.dart';
+
 //=============Pages
 import 'package:read_flutter/main.dart';
 import 'package:read_flutter/utiles/routes.dart';
@@ -138,7 +140,13 @@ class _QuizpageState extends State<Quizpage> {
                       radius: BorderRadius.circular(17),
                       border:
                           Border.all(color: Color.fromARGB(255, 10, 10, 10)),
-                      onPressed: () => HomePage(),
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            PageTransition(
+                                type: PageTransitionType.fade,
+                                child: HomePage()));
+                      },
                     )
                   ]).show();
               questionNumber = 0;

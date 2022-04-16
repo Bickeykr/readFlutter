@@ -4,7 +4,8 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 //===========Pub get pakeges
 import 'package:google_fonts/google_fonts.dart';
-//===========Pages
+ import 'package:page_transition/page_transition.dart';
+ //===========Pages
 import 'package:read_flutter/utiles/routes.dart';
 import 'Pages/HomePage.dart';
 

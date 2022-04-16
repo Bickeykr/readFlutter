@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:read_flutter/Pages/HomePage.dart';
 import 'package:read_flutter/utiles/routes.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:page_transition/page_transition.dart';
 
 class StartingPage extends StatefulWidget {
   const StartingPage({Key? key}) : super(key: key);
@@ -85,7 +87,13 @@ class _StartingPageState extends State<StartingPage> {
                           height: 25,
                         ),
                         InkWell(
-                          onTap: (() => moveToHome(context)),
+                          onTap: (() {
+                            Navigator.push(
+                                context,
+                                PageTransition(
+                                    type: PageTransitionType.fade,
+                                    child: HomePage()));
+                          }),
                           child: Ink(
                             width: 164,
                             height: 40,

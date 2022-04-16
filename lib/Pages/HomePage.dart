@@ -2,6 +2,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:page_transition/page_transition.dart';
+import 'package:read_flutter/TopicPages/topicPage01.dart';
 
 //===========Pages
 import 'package:read_flutter/utiles/routes.dart';
@@ -44,7 +46,10 @@ class _HomePageState extends State<HomePage> {
               ),
               InkWell(
                 onTap: (() {
-                  Navigator.pushNamed(context, MyRoutes.topicPage01);
+                  Navigator.push(
+                      context,
+                      PageTransition(
+                          type: PageTransitionType.fade, child: topicPage01()));
                 }),
                 child: Ink(
                   width: 304,

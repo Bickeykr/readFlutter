@@ -1,8 +1,11 @@
 //=============material.dar
 import 'package:flutter/material.dart';
+import 'package:read_flutter/TopicPages/topicPage03.dart';
 //=============pages
 import 'package:read_flutter/utiles/routes.dart';
 import 'package:google_fonts/google_fonts.dart';
+//============Packages
+import 'package:page_transition/page_transition.dart';
 
 class topicPage02 extends StatelessWidget {
   @override
@@ -51,7 +54,11 @@ class topicPage02 extends StatelessWidget {
                   padding: const EdgeInsets.fromLTRB(211, 0, 0, 0),
                   child: InkWell(
                     onTap: (() {
-                      Navigator.pushNamed(context, MyRoutes.topicPage03);
+                      Navigator.push(
+                          context,
+                          PageTransition(
+                              type: PageTransitionType.rightToLeft,
+                              child: topicPage03()));
                     }),
                     child: Ink(
                       width: 108,
