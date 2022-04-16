@@ -19,9 +19,8 @@ class _StartingPageState extends State<StartingPage> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(  
-       debugShowCheckedModeBanner: false,
-
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
       themeMode: ThemeMode.light,
       theme: ThemeData(
         //It adjust the color of button and other ements as per the given color
@@ -39,12 +38,27 @@ class _StartingPageState extends State<StartingPage> {
                 SizedBox(
                   height: 315,
                 ),
-                Text(
-                  "Welcome to readFlutter",
-                  style: TextStyle(
-                    fontSize: 29,
-                    color: Color.fromARGB(255, 22, 22, 22),
-                    fontWeight: FontWeight.bold,
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(50, 0, 0, 0),
+                  child: Row(
+                    children: [
+                      Text(
+                        "Welcome to",
+                        style: TextStyle(
+                          fontSize: 29,
+                          color: Color.fromARGB(255, 22, 22, 22),
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      Text(
+                        " readFlutter",
+                        style: TextStyle(
+                          fontSize: 29,
+                          color: Color(0xff78CCDE),
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ],
                   ),
                 ),
                 Padding(
@@ -76,12 +90,12 @@ class _StartingPageState extends State<StartingPage> {
                             width: 164,
                             height: 40,
                             child: Center(
-                              child: Text(
-                                "Submit",
-                                style: TextStyle(
+                              child: Text("Submit",
+                                  style: TextStyle(
                                     color: Color.fromARGB(255, 0, 0, 0),
-                                    fontSize: 20),
-                              ),
+                                    fontSize: 20,
+                                    fontFamily: GoogleFonts.roboto().fontFamily,
+                                  )),
                             ),
                             decoration: BoxDecoration(
                               color: Color.fromARGB(255, 14, 174, 210),
