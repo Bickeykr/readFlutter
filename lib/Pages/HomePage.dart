@@ -49,7 +49,8 @@ class _HomePageState extends State<HomePage> {
                   Navigator.push(
                       context,
                       PageTransition(
-                          type: PageTransitionType.fade, child: topicPage01()));
+                          type: PageTransitionType.bottomToTop,
+                          child: topicPage01()));
                 }),
                 child: Ink(
                   width: 304,

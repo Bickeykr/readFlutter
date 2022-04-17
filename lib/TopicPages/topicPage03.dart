@@ -6,6 +6,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 //============packages
 import 'package:rflutter_alert/rflutter_alert.dart';
+import 'package:page_transition/page_transition.dart';
 
 var alertStyle = AlertStyle(
   animationType: AnimationType.fromTop,
@@ -83,7 +84,7 @@ class topicPage03 extends StatelessWidget {
                           context: context,
                           title: ('Topic completed'),
                           desc:
-                              'Start Quiz to check your comprehension of the topic.',
+                              'Start Quiz to check your comprehension of the topic.\n1 ✅ ans = 1 point',
                           buttons: [
                             DialogButton(
                                 height: 60,

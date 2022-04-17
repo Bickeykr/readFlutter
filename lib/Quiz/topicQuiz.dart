@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:read_flutter/Pages/HomePage.dart';
+
+//===================pubGet packages
 import 'package:rflutter_alert/rflutter_alert.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:page_transition/page_transition.dart';
 
-//=============Pages
-import 'package:read_flutter/main.dart';
-import 'package:read_flutter/utiles/routes.dart';
+//===================Google fonts
+import 'package:google_fonts/google_fonts.dart';
 
-var name = "Bickey ";
+//=============Pages
+import 'package:read_flutter/utiles/routes.dart';
 
 var alertStyle = AlertStyle(
   animationType: AnimationType.fromTop,
@@ -39,40 +39,17 @@ class topicQuiz extends StatefulWidget {
 }
 
 class _topicQuizState extends State<topicQuiz> {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        backgroundColor: Color(0xff246EE9),
-        body: SafeArea(
-          child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 10),
-            child: Quizpage(),
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-class Quizpage extends StatefulWidget {
-  @override
-  State<Quizpage> createState() => _QuizpageState();
-}
-
-class _QuizpageState extends State<Quizpage> {
   List<String> questions = [
-    'Flutter was created by Google',
-    'Flutter uses JavaScript to build Apps',
-    'Flutter is a Database Software',
-    'Google was originally named BackRub',
-    'Dart is Dynamically Typed Language',
-    'Flutter uses SKIA to render Animation & Graphics',
-    'BMW ans Toyoko uses Flutter',
-    'In Flutter, developers can use each & every pixels of the entire screen',
-    'We cannot make Linux Applications using Flutter',
-    'Flutter is Close Source'
+    'Flutter is developed by Google',
+    'Flutter can only be used to build mobile apps.',
+    'Flutter is closed-source.',
+    'Flutter is managed by ECMA standard now.',
+    'Flutter uses Swift programming language to build apps.',
+    'Flutter was 1st introduced in 2015.',
+    'Flutter uses WebView and OEM widgets.',
+    'Google is also called Dart.',
+    'Flutter doesn’t use JavaScript.',
+    'Dart allows developers to read, change, replace or remove things easily.'
   ];
   List<bool> answers = [
     true,
@@ -81,145 +58,159 @@ class _QuizpageState extends State<Quizpage> {
     true,
     false,
     true,
-    true,
-    true,
     false,
-    false
+    false,
+    true,
+    true
   ];
 
   int questionNumber = 0;
   @override
   Widget build(BuildContext context) {
-    return Column(children: [
-      SizedBox(
-        height: 86,
-      ),
-      Center(
-          child: Text(
-        "Quiz",
-        style: TextStyle(
-          color: Color(0xff78CCDE),
-          fontSize: 70,
-          fontFamily: GoogleFonts.jost().fontFamily,
-        ),
-      )),
-      Expanded(
-        flex: 5,
-        child: Padding(
-          padding: EdgeInsets.all(10),
+    return MaterialApp(
+      home: Scaffold(
+        backgroundColor: Color(0xff246EE9),
+        body: SafeArea(
           child: Center(
-            child: Text(
-              questions[questionNumber],
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                  color: Color.fromARGB(255, 255, 255, 255), fontSize: 30),
-            ),
-          ),
-        ),
-      ),
-      InkWell(
-        onTap: (() {
-          setState(() {
-            if (questionNumber < questions.length - 1) {
-              questionNumber++;
-            } else {
-              Alert(
-                  style: alertStyle,
-                  context: context,
-                  title: ('Congrats $name 🎉'),
-                  desc:
-                      'You have successfuly completeed the quiz. you scored 6/10.',
-                  buttons: [
-                    DialogButton(
-                      height: 60,
-                      width: 200,
+            child: Column(
+              children: [
+                SizedBox(
+                  height: 86,
+                ),
+                Center(
+                    child: Text(
+                  "Quiz",
+                  style: TextStyle(
+                    color: Color(0xff78CCDE),
+                    fontSize: 70,
+                    fontFamily: GoogleFonts.jost().fontFamily,
+                  ),
+                )),
+                Expanded(
+                  flex: 5,
+                  child: Padding(
+                    padding: EdgeInsets.all(10),
+                    child: Center(
                       child: Text(
-                        'Home',
-                        style: TextStyle(fontSize: 34),
+                        questions[questionNumber],
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                            color: Color.fromARGB(255, 255, 255, 255),
+                            fontSize: 30),
                       ),
-                      radius: BorderRadius.circular(17),
-                      border:
-                          Border.all(color: Color.fromARGB(255, 10, 10, 10)),
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            PageTransition(
-                                type: PageTransitionType.fade,
-                                child: HomePage()));
-                      },
-                    )
-                  ]).show();
-              questionNumber = 0;
-            }
-          });
-        }),
-        child: Ink(
-          width: 256,
-          height: 75,
-          child: Center(
-            child: Text(
-              "True",
-              style:
-                  TextStyle(color: Color.fromARGB(255, 0, 0, 0), fontSize: 38),
-            ),
-          ),
-          decoration: BoxDecoration(
-              color: Color(0xff00EF60),
-              borderRadius: BorderRadius.circular(20),
-              border: Border.all(color: Color.fromARGB(255, 10, 10, 10))),
-        ),
-      ),
-      SizedBox(
-        height: 34,
-      ),
-      InkWell(
-        onTap: (() {
-          setState(() {
-            if (questionNumber < questions.length - 1) {
-              questionNumber++;
-            } else {
-              Alert(
-                  style: alertStyle,
-                  context: context,
-                  title: ('Congrats $name 🎉'),
-                  desc:
-                      'You have successfuly completeed the quiz. you scored 6/10.',
-                  buttons: [
-                    DialogButton(
-                        height: 60,
-                        width: 200,
-                        child: Text(
-                          'Home',
-                          style: TextStyle(fontSize: 34),
-                        ),
-                        radius: BorderRadius.circular(17),
+                    ),
+                  ),
+                ),
+                InkWell(
+                  onTap: (() {
+                    setState(() {
+                      if (questionNumber < questions.length - 1) {
+                        questionNumber++;
+                      } else {
+                        Alert(
+                            style: alertStyle,
+                            context: context,
+                            title: ('Congrats Bickey 🎉'),
+                            desc:
+                                'You have successfuly completeed the quiz. you scored 6/10.',
+                            buttons: [
+                              DialogButton(
+                                height: 60,
+                                width: 200,
+                                child: Text(
+                                  'Home',
+                                  style: TextStyle(fontSize: 34),
+                                ),
+                                radius: BorderRadius.circular(17),
+                                border: Border.all(
+                                    color: Color.fromARGB(255, 10, 10, 10)),
+                                onPressed: () {
+                                  Navigator.pushNamed(
+                                      context, MyRoutes.HomeRoute);
+                                },
+                              )
+                            ]).show();
+                        questionNumber = 0;
+                      }
+                    });
+                  }),
+                  child: Ink(
+                    width: 256,
+                    height: 75,
+                    child: Center(
+                      child: Text(
+                        "True",
+                        style: TextStyle(
+                            color: Color.fromARGB(255, 0, 0, 0), fontSize: 38),
+                      ),
+                    ),
+                    decoration: BoxDecoration(
+                        color: Color(0xff00EF60),
+                        borderRadius: BorderRadius.circular(20),
                         border:
-                            Border.all(color: Color.fromARGB(255, 10, 10, 10)),
-                        onPressed: () {})
-                  ]).show();
-              questionNumber = 0;
-            }
-          });
-        }),
-        child: Ink(
-          width: 256,
-          height: 75,
-          child: Center(
-            child: Text(
-              "False",
-              style:
-                  TextStyle(color: Color.fromARGB(255, 0, 0, 0), fontSize: 38),
+                            Border.all(color: Color.fromARGB(255, 10, 10, 10))),
+                  ),
+                ),
+                SizedBox(
+                  height: 34,
+                ),
+                InkWell(
+                  onTap: (() {
+                    setState(() {
+                      if (questionNumber < questions.length - 1) {
+                        questionNumber++;
+                      } else {
+                        Alert(
+                            style: alertStyle,
+                            context: context,
+                            title: ('Congrats Bickey 🎉'),
+                            desc:
+                                'You have successfuly completeed the quiz. you scored 6/10.',
+                            buttons: [
+                              DialogButton(
+                                  height: 60,
+                                  width: 200,
+                                  child: Text(
+                                    'Home',
+                                    style: TextStyle(fontSize: 34),
+                                  ),
+                                  radius: BorderRadius.circular(17),
+                                  border: Border.all(
+                                      color: Color.fromARGB(255, 10, 10, 10)),
+                                  onPressed: () {
+                                    Navigator.pushNamed(
+                                        context, MyRoutes.HomeRoute);
+                                  })
+                            ]).show();
+                        questionNumber = 0;
+                      }
+                    });
+                  }),
+                  child: Ink(
+                    width: 256,
+                    height: 75,
+                    child: Center(
+                      child: Text(
+                        "False",
+                        style: TextStyle(
+                            color: Color.fromARGB(255, 0, 0, 0), fontSize: 38),
+                      ),
+                    ),
+                    decoration: BoxDecoration(
+                        color: Color(0xffEA5252),
+                        borderRadius: BorderRadius.circular(20),
+                        border:
+                            Border.all(color: Color.fromARGB(255, 10, 10, 10))),
+                  ),
+                ),
+                SizedBox(
+                  height: 100,
+                ),
+              ],
             ),
           ),
-          decoration: BoxDecoration(
-              color: Color(0xffEA5252),
-              borderRadius: BorderRadius.circular(20),
-              border: Border.all(color: Color.fromARGB(255, 10, 10, 10))),
         ),
       ),
-      SizedBox(
-        height: 100,
-      ),
-    ]);
+    );
   }
 }

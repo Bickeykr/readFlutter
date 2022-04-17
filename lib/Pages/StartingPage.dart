@@ -91,7 +91,7 @@ class _StartingPageState extends State<StartingPage> {
                             Navigator.push(
                                 context,
                                 PageTransition(
-                                    type: PageTransitionType.fade,
+                                    type: PageTransitionType.leftToRight,
                                     child: HomePage()));
                           }),
                           child: Ink(
