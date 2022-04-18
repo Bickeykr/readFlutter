@@ -27,147 +27,149 @@ class _HomePageState extends State<HomePage> {
       ),
       home: Scaffold(
         backgroundColor: Color(0xff246EE9),
-        body: Center(
-          child: Column(
-            children: [
-              SizedBox(
-                height: 140,
-              ),
-              Text(
-                "Choose a Topic",
-                style: TextStyle(
-                  fontSize: 40,
-                  color: Color(0xff78CCDE),
-                  fontWeight: FontWeight.bold,
+        body: SingleChildScrollView(
+          child: Center(
+            child: Column(
+              children: [
+                SizedBox(
+                  height: 140,
                 ),
-              ),
-              SizedBox(
-                height: 50,
-              ),
-              InkWell(
-                onTap: (() {
-                  Navigator.push(
-                      context,
-                      PageTransition(
-                          type: PageTransitionType.bottomToTop,
-                          child: topicPage01()));
-                }),
-                child: Ink(
-                  width: 304,
-                  height: 74,
-                  child: Center(
-                    child: Text(
-                      "Introduction",
-                      style: TextStyle(
-                          color: Color.fromARGB(255, 0, 0, 0), fontSize: 36),
-                    ),
+                Text(
+                  "Choose a Topic",
+                  style: TextStyle(
+                    fontSize: 40,
+                    color: Color(0xff78CCDE),
+                    fontWeight: FontWeight.bold,
                   ),
-                  decoration: BoxDecoration(
-                      color: Color(0xff78CCDE),
-                      borderRadius: BorderRadius.circular(8),
-                      border:
-                          Border.all(color: Color.fromARGB(255, 10, 10, 10))),
                 ),
-              ),
-              SizedBox(
-                height: 37,
-              ),
-              InkWell(
-                onTap: (() {}),
-                child: Ink(
-                  width: 304,
-                  height: 74,
-                  child: Center(
-                    child: Text(
-                      "Why Flutter",
-                      style: TextStyle(
-                          color: Color.fromARGB(255, 0, 0, 0), fontSize: 36),
+                SizedBox(
+                  height: 50,
+                ),
+                InkWell(
+                  onTap: (() {
+                    Navigator.push(
+                        context,
+                        PageTransition(
+                            type: PageTransitionType.bottomToTop,
+                            child: topicPage01()));
+                  }),
+                  child: Ink(
+                    width: 304,
+                    height: 74,
+                    child: Center(
+                      child: Text(
+                        "Introduction",
+                        style: TextStyle(
+                            color: Color.fromARGB(255, 0, 0, 0), fontSize: 36),
+                      ),
                     ),
+                    decoration: BoxDecoration(
+                        color: Color(0xff78CCDE),
+                        borderRadius: BorderRadius.circular(8),
+                        border:
+                            Border.all(color: Color.fromARGB(255, 10, 10, 10))),
                   ),
-                  decoration: BoxDecoration(
-                      color: Color(0xff78CCDE),
-                      borderRadius: BorderRadius.circular(8),
-                      border:
-                          Border.all(color: Color.fromARGB(255, 10, 10, 10))),
                 ),
-              ),
-              SizedBox(
-                height: 37,
-              ),
-              InkWell(
-                onTap: (() {}),
-                child: Ink(
-                  width: 304,
-                  height: 74,
-                  child: Center(
-                    child: Text(
-                      " Features",
-                      style: TextStyle(
-                          color: Color.fromARGB(255, 0, 0, 0), fontSize: 36),
+                SizedBox(
+                  height: 37,
+                ),
+                InkWell(
+                  onTap: (() {}),
+                  child: Ink(
+                    width: 304,
+                    height: 74,
+                    child: Center(
+                      child: Text(
+                        "Why Flutter",
+                        style: TextStyle(
+                            color: Color.fromARGB(255, 0, 0, 0), fontSize: 36),
+                      ),
                     ),
+                    decoration: BoxDecoration(
+                        color: Color(0xff78CCDE),
+                        borderRadius: BorderRadius.circular(8),
+                        border:
+                            Border.all(color: Color.fromARGB(255, 10, 10, 10))),
                   ),
-                  decoration: BoxDecoration(
-                      color: Color(0xff78CCDE),
-                      borderRadius: BorderRadius.circular(8),
-                      border:
-                          Border.all(color: Color.fromARGB(255, 10, 10, 10))),
                 ),
-              ),
-              SizedBox(
-                height: 37,
-              ),
-              InkWell(
-                onTap: (() {}),
-                child: Ink(
-                  width: 304,
-                  height: 74,
-                  child: Center(
-                    child: Text(
-                      "Widgets",
-                      style: TextStyle(
-                          color: Color.fromARGB(255, 0, 0, 0), fontSize: 36),
+                SizedBox(
+                  height: 37,
+                ),
+                InkWell(
+                  onTap: (() {}),
+                  child: Ink(
+                    width: 304,
+                    height: 74,
+                    child: Center(
+                      child: Text(
+                        " Features",
+                        style: TextStyle(
+                            color: Color.fromARGB(255, 0, 0, 0), fontSize: 36),
+                      ),
                     ),
+                    decoration: BoxDecoration(
+                        color: Color(0xff78CCDE),
+                        borderRadius: BorderRadius.circular(8),
+                        border:
+                            Border.all(color: Color.fromARGB(255, 10, 10, 10))),
                   ),
-                  decoration: BoxDecoration(
-                      color: Color(0xff78CCDE),
-                      borderRadius: BorderRadius.circular(8),
-                      border:
-                          Border.all(color: Color.fromARGB(255, 10, 10, 10))),
                 ),
-              ),
-              SizedBox(
-                height: 37,
-              ),
-              InkWell(
-                onTap: (() {}),
-                child: Ink(
-                  width: 304,
-                  height: 74,
-                  child: Center(
-                    child: Text(
-                      "Widget Tree",
-                      style: TextStyle(
-                          color: Color.fromARGB(255, 0, 0, 0), fontSize: 36),
+                SizedBox(
+                  height: 37,
+                ),
+                InkWell(
+                  onTap: (() {}),
+                  child: Ink(
+                    width: 304,
+                    height: 74,
+                    child: Center(
+                      child: Text(
+                        "Widgets",
+                        style: TextStyle(
+                            color: Color.fromARGB(255, 0, 0, 0), fontSize: 36),
+                      ),
                     ),
+                    decoration: BoxDecoration(
+                        color: Color(0xff78CCDE),
+                        borderRadius: BorderRadius.circular(8),
+                        border:
+                            Border.all(color: Color.fromARGB(255, 10, 10, 10))),
                   ),
-                  decoration: BoxDecoration(
-                      color: Color(0xff78CCDE),
-                      borderRadius: BorderRadius.circular(8),
-                      border:
-                          Border.all(color: Color.fromARGB(255, 10, 10, 10))),
                 ),
-              ),
-              SizedBox(
-                height: 50,
-              ),
-              Text(
-                "Inspired by Flutter 5 days bootcamp.",
-                style: TextStyle(
-                  fontSize: 10,
-                  fontFamily: GoogleFonts.averiaLibre().fontFamily,
+                SizedBox(
+                  height: 37,
                 ),
-              )
-            ],
+                InkWell(
+                  onTap: (() {}),
+                  child: Ink(
+                    width: 304,
+                    height: 74,
+                    child: Center(
+                      child: Text(
+                        "Widget Tree",
+                        style: TextStyle(
+                            color: Color.fromARGB(255, 0, 0, 0), fontSize: 36),
+                      ),
+                    ),
+                    decoration: BoxDecoration(
+                        color: Color(0xff78CCDE),
+                        borderRadius: BorderRadius.circular(8),
+                        border:
+                            Border.all(color: Color.fromARGB(255, 10, 10, 10))),
+                  ),
+                ),
+                SizedBox(
+                  height: 50,
+                ),
+                Text(
+                  "Inspired by Flutter 5 days bootcamp.",
+                  style: TextStyle(
+                    fontSize: 10,
+                    fontFamily: GoogleFonts.averiaLibre().fontFamily,
+                  ),
+                )
+              ],
+            ),
           ),
         ),
       ),
