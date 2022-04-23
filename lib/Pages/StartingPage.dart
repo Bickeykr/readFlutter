@@ -15,7 +15,10 @@ class _StartingPageState extends State<StartingPage> {
   final _formKey = GlobalKey<FormState>();
   moveToHome(BuildContext context) {
     if (_formKey.currentState!.validate()) {
-      Navigator.pushNamed(context, MyRoutes.HomeRoute);
+      Navigator.push(
+          context,
+          PageTransition(
+              type: PageTransitionType.leftToRight, child: HomePage()));
     }
   }
 
@@ -87,13 +90,7 @@ class _StartingPageState extends State<StartingPage> {
                           height: 25,
                         ),
                         InkWell(
-                          onTap: (() {
-                            Navigator.push(
-                                context,
-                                PageTransition(
-                                    type: PageTransitionType.leftToRight,
-                                    child: HomePage()));
-                          }),
+                          onTap: (() => moveToHome(context)),
                           child: Ink(
                             width: 164,
                             height: 40,

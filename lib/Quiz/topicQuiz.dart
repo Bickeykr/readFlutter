@@ -68,6 +68,7 @@ class _topicQuizState extends State<topicQuiz> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         backgroundColor: Color(0xff246EE9),
         body: SafeArea(
@@ -110,7 +111,7 @@ class _topicQuizState extends State<topicQuiz> {
                         Alert(
                             style: alertStyle,
                             context: context,
-                            title: ('Congrats Bickey 🎉'),
+                            title: ('Congrats + name + 🎉'),
                             desc:
                                 'You have successfuly completeed the quiz. you scored 6/10.',
                             buttons: [
