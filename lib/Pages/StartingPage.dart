@@ -12,6 +12,7 @@ class StartingPage extends StatefulWidget {
 }
 
 class _StartingPageState extends State<StartingPage> {
+  String username = "";
   final _formKey = GlobalKey<FormState>();
   moveToHome(BuildContext context) {
     if (_formKey.currentState!.validate()) {
@@ -41,7 +42,21 @@ class _StartingPageState extends State<StartingPage> {
             child: Column(
               children: [
                 SizedBox(
-                  height: 315,
+                  height: 280,
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(left: 48),
+                  child: Align(
+                    alignment: Alignment.centerLeft,
+                    child: Text(
+                      "Hello, " + username,
+                      style: TextStyle(
+                        fontSize: 29,
+                        color: Color.fromARGB(255, 22, 22, 22),
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
                 ),
                 Padding(
                   padding: const EdgeInsets.fromLTRB(50, 0, 0, 0),
@@ -67,7 +82,7 @@ class _StartingPageState extends State<StartingPage> {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsets.all(60),
+                  padding: EdgeInsets.fromLTRB(55, 40, 55, 60),
                   child: Form(
                     key: _formKey,
                     child: Column(
@@ -79,6 +94,11 @@ class _StartingPageState extends State<StartingPage> {
                                 color: Color.fromARGB(255, 0, 0, 0)),
                             hintText: "Enter your name",
                           ),
+                          onChanged: (value) {
+                            username = value;
+                            setState(() {});
+                          },
+                          maxLength: 12,
                           validator: (value) {
                             if (value!.isEmpty) {
                               return "Username cannot be empty";
@@ -89,24 +109,28 @@ class _StartingPageState extends State<StartingPage> {
                         SizedBox(
                           height: 25,
                         ),
-                        InkWell(
-                          onTap: (() => moveToHome(context)),
-                          child: Ink(
-                            width: 164,
-                            height: 40,
-                            child: Center(
-                              child: Text("Submit",
-                                  style: TextStyle(
-                                    color: Color.fromARGB(255, 0, 0, 0),
-                                    fontSize: 20,
-                                    fontFamily: GoogleFonts.roboto().fontFamily,
-                                  )),
-                            ),
-                            decoration: BoxDecoration(
-                              color: Color.fromARGB(255, 14, 174, 210),
-                              borderRadius: BorderRadius.circular(7),
-                              border: Border.all(
-                                color: Color.fromARGB(255, 10, 10, 10),
+                        Padding(
+                          padding: const EdgeInsets.only(left: 115),
+                          child: InkWell(
+                            onTap: (() => moveToHome(context)),
+                            child: Ink(
+                              width: 164,
+                              height: 40,
+                              child: Center(
+                                child: Text("Submit",
+                                    style: TextStyle(
+                                      color: Color.fromARGB(255, 0, 0, 0),
+                                      fontSize: 20,
+                                      fontFamily:
+                                          GoogleFonts.roboto().fontFamily,
+                                    )),
+                              ),
+                              decoration: BoxDecoration(
+                                color: Color.fromARGB(255, 14, 174, 210),
+                                borderRadius: BorderRadius.circular(7),
+                                border: Border.all(
+                                  color: Color.fromARGB(255, 10, 10, 10),
+                                ),
                               ),
                             ),
                           ),
@@ -114,7 +138,17 @@ class _StartingPageState extends State<StartingPage> {
                       ],
                     ),
                   ),
-                )
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(top: 213),
+                  child: Text(
+                    "Made with ❤️ by Bickey.",
+                    style: TextStyle(
+                      fontSize: 10,
+                      fontFamily: GoogleFonts.averiaLibre().fontFamily,
+                    ),
+                  ),
+                ),
               ],
             ),
           ),

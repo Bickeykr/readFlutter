@@ -111,7 +111,7 @@ class _topicQuizState extends State<topicQuiz> {
                         Alert(
                             style: alertStyle,
                             context: context,
-                            title: ('Congrats + name + 🎉'),
+                            title: ('Congrats 🎉'),
                             desc:
                                 'You have successfuly completeed the quiz. you scored 6/10.',
                             buttons: [
@@ -164,7 +164,7 @@ class _topicQuizState extends State<topicQuiz> {
                         Alert(
                             style: alertStyle,
                             context: context,
-                            title: ('Congrats Bickey 🎉'),
+                            title: ('Congrats 🎉'),
                             desc:
                                 'You have successfuly completeed the quiz. you scored 6/10.',
                             buttons: [
