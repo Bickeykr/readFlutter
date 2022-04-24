@@ -48,7 +48,7 @@ class _topicQuizState extends State<topicQuiz> {
     'Flutter was 1st introduced in 2015.',
     'Flutter uses WebView and OEM widgets.',
     'Google is also called Dart.',
-    'Flutter doesn’t use JavaScript.',
+    'Flutter doesnt use JavaScript.',
     'Dart allows developers to read, change, replace or remove things easily.'
   ];
   List<bool> answers = [
@@ -65,6 +65,8 @@ class _topicQuizState extends State<topicQuiz> {
   ];
 
   int questionNumber = 0;
+  List<String> scores = [];
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -107,6 +109,10 @@ class _topicQuizState extends State<topicQuiz> {
                     setState(() {
                       if (questionNumber < questions.length - 1) {
                         questionNumber++;
+
+                        if (answers[questionNumber] == true) {
+                          scores.add("A");
+                        }
                       } else {
                         Alert(
                             style: alertStyle,
@@ -128,10 +134,13 @@ class _topicQuizState extends State<topicQuiz> {
                                 onPressed: () {
                                   Navigator.pushNamed(
                                       context, MyRoutes.HomeRoute);
+                                  scores = [];
                                 },
                               )
                             ]).show();
                         questionNumber = 0;
+                        print(scores.length);
+                        print(scores);
                       }
                     });
                   }),
@@ -160,6 +169,10 @@ class _topicQuizState extends State<topicQuiz> {
                     setState(() {
                       if (questionNumber < questions.length - 1) {
                         questionNumber++;
+
+                        if (answers[questionNumber] == false) {
+                          scores.add("B");
+                        }
                       } else {
                         Alert(
                             style: alertStyle,
@@ -181,9 +194,12 @@ class _topicQuizState extends State<topicQuiz> {
                                   onPressed: () {
                                     Navigator.pushNamed(
                                         context, MyRoutes.HomeRoute);
+                                    scores = [];
                                   })
                             ]).show();
                         questionNumber = 0;
+                        print(scores.length);
+                        print(scores);
                       }
                     });
                   }),
