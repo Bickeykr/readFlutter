@@ -69,6 +69,7 @@ class _topicQuizState extends State<topicQuiz> {
 
   @override
   Widget build(BuildContext context) {
+    var score = scores.length;
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
@@ -108,18 +109,20 @@ class _topicQuizState extends State<topicQuiz> {
                   onTap: (() {
                     setState(() {
                       if (questionNumber < questions.length - 1) {
-                        questionNumber++;
-
                         if (answers[questionNumber] == true) {
-                          scores.add("A");
+                          scores.add("T");
+                          print(scores);
+                        } else {
+                          print(scores.length);
                         }
+                        questionNumber++;
                       } else {
                         Alert(
                             style: alertStyle,
                             context: context,
                             title: ('Congrats 🎉'),
                             desc:
-                                'You have successfuly completeed the quiz. you scored 6/10.',
+                                'You have successfuly completeed the quiz. you  scored $score/10',
                             buttons: [
                               DialogButton(
                                 height: 60,
@@ -168,18 +171,20 @@ class _topicQuizState extends State<topicQuiz> {
                   onTap: (() {
                     setState(() {
                       if (questionNumber < questions.length - 1) {
-                        questionNumber++;
-
                         if (answers[questionNumber] == false) {
-                          scores.add("B");
+                          scores.add("F");
+                          print(scores);
+                        } else {
+                          print(scores.length);
                         }
+                        questionNumber++;
                       } else {
                         Alert(
                             style: alertStyle,
                             context: context,
                             title: ('Congrats 🎉'),
                             desc:
-                                'You have successfuly completeed the quiz. you scored 6/10.',
+                                'You have successfuly completeed the quiz. you scored $score/10.',
                             buttons: [
                               DialogButton(
                                   height: 60,
