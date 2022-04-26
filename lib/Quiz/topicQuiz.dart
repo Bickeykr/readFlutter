@@ -111,18 +111,17 @@ class _topicQuizState extends State<topicQuiz> {
                       if (questionNumber < questions.length - 1) {
                         if (answers[questionNumber] == true) {
                           scores.add("T");
-                          print(scores);
-                        } else {
-                          print(scores.length);
-                        }
+                        } else {}
                         questionNumber++;
                       } else {
+                        score++;
+                        //This score++ will only work at this place if the answer of the last question is true if false use this line of code in false button
                         Alert(
                             style: alertStyle,
                             context: context,
                             title: ('Congrats 🎉'),
                             desc:
-                                'You have successfuly completeed the quiz. you  scored $score/10',
+                                'You have successfully completed the quiz. You scored $score/10.',
                             buttons: [
                               DialogButton(
                                 height: 60,
@@ -142,8 +141,6 @@ class _topicQuizState extends State<topicQuiz> {
                               )
                             ]).show();
                         questionNumber = 0;
-                        print(scores.length);
-                        print(scores);
                       }
                     });
                   }),
@@ -173,10 +170,7 @@ class _topicQuizState extends State<topicQuiz> {
                       if (questionNumber < questions.length - 1) {
                         if (answers[questionNumber] == false) {
                           scores.add("F");
-                          print(scores);
-                        } else {
-                          print(scores.length);
-                        }
+                        } else {}
                         questionNumber++;
                       } else {
                         Alert(
@@ -184,7 +178,7 @@ class _topicQuizState extends State<topicQuiz> {
                             context: context,
                             title: ('Congrats 🎉'),
                             desc:
-                                'You have successfuly completeed the quiz. you scored $score/10.',
+                                'You have successfully completed the quiz. You scored $score/10.',
                             buttons: [
                               DialogButton(
                                   height: 60,
@@ -203,8 +197,6 @@ class _topicQuizState extends State<topicQuiz> {
                                   })
                             ]).show();
                         questionNumber = 0;
-                        print(scores.length);
-                        print(scores);
                       }
                     });
                   }),
